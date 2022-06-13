@@ -1,0 +1,302 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&family=Quicksand:wght@500&display=swap");
+
+$primary-color: #F6F5F5;
+$secondary-color: #D3E0EA;
+$third-color: #d67d3e;
+$fourth-color: #9c0f48;
+$fifth-color: #276678;
+$seventh-color: #1687A7;
+$sixth-color: black;
+$white: white;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: "Poppins", "Quicksand", sans-serif;
+    font-size: 12;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: $primary-color;
+    min-height: 100vh;
+    font-family: "Poppins", "Quicksand", sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+a {
+    text-decoration: none;
+}
+
+.skip-link {
+    position: absolute;
+    top: -50px;
+    left: 0;
+    background-color: $fourth-color;
+    color: white;
+    padding: 8px;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+.container {
+    padding: 8px 16px;
+}
+
+header {
+    top: 0;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    position: sticky;
+    z-index: 99;
+}
+.app-bar {
+    padding: 8px 16px;
+    background-color: $primary-color;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    
+    .app-bar__menu {
+        display: flex;
+        align-items: center;
+
+        #menu-button {
+            width: 44px;
+            height: 44px;
+            line-height: 44px;
+            text-align: center;
+            display: block;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: $sixth-color;
+            cursor: pointer;
+        }
+    }
+
+    .app-bar__brand {
+        display: flex;
+        align-items: center;
+
+        .navbar_brand {
+            padding: 10px;
+            height: 60px;
+            width: auto;
+        }
+    }
+
+    .app-bar__navigation {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 0;
+        transition: all 0.3s;
+        // padding: 10px 0 0 0;
+        // padding-top: 10px;
+        // padding-bottom: 8px;
+        background-color: $primary-color;
+        overflow: hidden;
+        z-index: 1;
+        font-weight: bold;
+        list-style-type: none; 
+    }
+
+    .app-bar__navigation.open {
+        right: 0;
+        width: 150px;
+        text-align: left;
+        padding-left: 16px;
+        font-size: 1rem;
+        text-decoration: none;
+    }
+
+    .app-bar__navigation ul {
+        text-decoration: none;
+        list-style-type: none; 
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-left: 0;
+    }
+    .app-bar__navigation ul li a {
+        display: inline-block;
+        text-decoration: none;
+        color: $fifth-color;
+        padding: 8px;
+        margin-bottom: 5px;
+        width: 100%;
+        min-height: 44px;
+        list-style-type: none; 
+    }
+}
+
+main {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.lds-ellipsis {
+    display: block;
+    position: relative;
+    width: 100px;
+    height: 100px;
+
+    .spinner {
+        position: absolute;
+        top: 33px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        animation-timing-function: cubic-bezier(0, 1, 1, 0);
+    }
+
+    .satu {
+        background-color: $secondary-color;
+    }
+
+    .dua {
+        background-color: $primary-color;
+    }
+
+    .tiga {
+        background-color: $fifth-color;
+    }
+
+    .empat {
+        background-color: $seventh-color;
+    }
+
+    .spinner:nth-child(1) {
+        left: 8px;
+        animation: lds-ellipsis1 0.6s infinite;
+    }
+
+    .spinner:nth-child(2) {
+        left: 8px;
+        animation: lds-ellipsis2 0.6s infinite;
+    }
+
+    .spinner:nth-child(3) {
+        left: 32px;
+        animation: lds-ellipsis2 0.6s infinite;
+    }
+
+    .spinner:nth-child(4) {
+        left: 56px;
+        animation: lds-ellipsis3 0.6s infinite;
+    }
+}
+
+@keyframes lds-ellipsis1 {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes lds-ellipsis3 {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes lds-ellipsis2 {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(24px, 0);
+    }
+}
+
+#main-content {
+    .content-title {
+        text-align: center;
+        font-family: "Poppins", sans-serif;
+        margin-bottom: 1rem;
+        margin-top: 1.5rem;
+        font-size: 2rem;
+        color: $sixth-color;
+        min-height: 44px;
+    }
+}
+
+// Rekomedasi
+
+search-bar-content {
+
+    .col-12 {
+        padding: 1rem;
+    }
+
+    .heading-2 {
+        text-align: center;
+        font-family: "Poppins", sans-serif;
+        margin-bottom: 2rem;
+        margin-top: 1.5rem;
+        color: $fifth-color;
+        min-height: 44px;
+        font-size: 2rem;
+    }
+
+    .dropdown-rs {
+        min-height: 44px;
+        
+        select {
+            color : $fifth-color;
+        }
+    }
+
+    .btn-cari {
+        min-height: 44px;
+    }
+}
+
+.hasil-pencarian {
+    background-color: #f0f0f0;
+    padding: 1rem;
+    min-height: 58vh;
+
+    .btn-lokasi {
+        min-height: 44px;
+        padding: 10px;
+    }
+}
+
+#footer {
+    padding: 1.5rem;
+    display: flex;
+    font-family: "Poppins", sans-serif;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px -1px 0px 0px #00000033;
+    font-weight: bold;
+    background-color: $primary-color;
+    color: $fifth-color;
+}
